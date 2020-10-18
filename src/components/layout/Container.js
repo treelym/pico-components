@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import classNames from '../../utils/classNames';
+import { containerSizeModifiers } from '../../utils/modifiers';
 
 
-const Section = ({
+const Container = ({
   classes = [],
-  size
+  size 
 }) => {
-  const baseClass = 'section';
+  const baseClass = 'container';
   const classList = classNames(
     baseClass,
     {
@@ -18,16 +19,16 @@ const Section = ({
   );
 
   return (
-    <section className={classList}>
+    <div className={classList}>
       {children}
-    </section>
+    </div>
   );
 };
 
-Section.propTypes = {
+Container.propTypes = {
   children: PropTypes.children.isRequired,
   classes: PropTypes.array,
-  size: PropTypes.oneOf(['medium', 'large'])
+  size: PropTypes(containerSizeModifiers)
 };
 
-export default Section;
+export default Container;

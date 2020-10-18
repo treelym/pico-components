@@ -11,3 +11,11 @@ export const colorModifiers = [
   'warning',
   'danger'
 ];
+
+export const containerSizeModifiers = [
+  'fluid',
+  'fullhd',
+  'maxDesktop',
+  'maxWidescreen',
+  'widescreen'
+];
