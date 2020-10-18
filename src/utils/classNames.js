@@ -1,19 +1,21 @@
-var hasOwn = {}.hasOwnProperty;
+const classNames = (...args) => {
+  const hasOwn = Object.prototype.hasOwnProperty;
+  const classes = [];
 
-const classNames = () => {
-  var classes = [];
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
 
-  for (var i = 0; i < arguments.length; i++) {
-    var arg = arguments[i];
-    if (!arg) continue;
+    if (!arg) {
+      continue;
+    }
 
-    var argType = typeof arg;
+    const argType = typeof arg;
 
     if (argType === 'string' || argType === 'number') {
       classes.push(arg);
     } else if (Array.isArray(arg)) {
-      if(arg.length) {
-        var inner = classNames.apply(null, arg);
+      if (arg.length) {
+        const inner = classNames.apply(null, arg);
         if (inner) {
           classes.push(inner);
         }
@@ -22,7 +24,7 @@ const classNames = () => {
       if (arg.toString !== Object.prototype.toString) {
         classes.push(arg.toString());
       } else {
-        for (var key in arg) {
+        for (const key in arg) {
           if (hasOwn.call(arg, key) && arg[key]) {
             classes.push(key);
           }
@@ -32,18 +34,6 @@ const classNames = () => {
   }
 
   return classes.join(' ');
-}
-
-if (typeof module !== 'undefined' && module.exports) {
-  classNames.default = classNames;
-  module.exports = classNames;
-} else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
-  // register as 'classnames', consistent with npm package name
-  define('classnames', [], function () {
-    return classNames;
-  });
-} else {
-  window.classNames = classNames;
 }
 
 export default classNames;
