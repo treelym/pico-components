@@ -6,6 +6,7 @@ import classNames from '../../utils/classNames';
 
 const Section = ({
   classes = [],
+  children,
   size
 }) => {
   const baseClass = 'section';

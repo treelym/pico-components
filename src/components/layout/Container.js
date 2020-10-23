@@ -7,6 +7,7 @@ import { containerSizeModifiers } from '../../utils/modifiers';
 
 const Container = ({
   classes = [],
+  children,
   size 
 }) => {
   const baseClass = 'container';
