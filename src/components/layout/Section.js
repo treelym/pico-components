@@ -26,7 +26,7 @@ const Section = ({
 };
 
 Section.propTypes = {
-  children: PropTypes.children.isRequired,
+  children: PropTypes.node.isRequired,
   classes: PropTypes.array,
   size: PropTypes.oneOf(['medium', 'large'])
 };

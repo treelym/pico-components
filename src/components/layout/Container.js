@@ -27,7 +27,7 @@ const Container = ({
 };
 
 Container.propTypes = {
-  children: PropTypes.children.isRequired,
+  children: PropTypes.node.isRequired,
   classes: PropTypes.array,
   size: PropTypes(containerSizeModifiers)
 };

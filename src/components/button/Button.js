@@ -8,8 +8,8 @@ const Button = ({
   children,
   color
 }) => {
-  const classes = classNames(
-    'button', {
+  const baseClass = 'button';
+  const classes = classNames(baseClass, {
     [`is-${color}`]: color
   });
 
@@ -21,7 +21,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  children: PropTypes.node.isRequired,
   color: PropTypes.oneOf(colorModifiers)
 };
 
