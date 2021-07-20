@@ -1,8 +1,9 @@
 const classNames = (...args) => {
   const hasOwn = Object.prototype.hasOwnProperty;
+  const argsLength = args.length;
   const classes = [];
 
-  for (let i = 0; i < args.length; i++) {
+  for (let i = 0; i < argsLength; i++) {
     const arg = args[i];
 
     if (!arg) {

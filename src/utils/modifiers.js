@@ -1,15 +1,16 @@
-export const colorModifiers = [
-  'white',
-  'light',
-  'dark',
+export const buttonColorModifiers = [
   'black',
-  'text',
-  'primary',
-  'link',
+  'danger',
+  'dark',
+  'ghost',
   'info',
+  'light',
+  'link',
+  'primary',
   'success',
+  'text',
   'warning',
-  'danger'
+  'white',
 ];
 
 export const containerSizeModifiers = [
