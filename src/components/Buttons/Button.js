@@ -5,31 +5,31 @@ import { buttonColorModifiers } from '../../utils/modifiers';
 import classNames from '../../utils/classNames';
 
 const Button = ({
+  buttonState,
   color,
   disabled,
   fullwidth,
   inverted,
+  isStatic,
   light,
   loading,
   outlined,
   rounded,
   size,
-  state,
-  static,
   text,
   type = 'button'
 }) => {
   const classes = classNames('button', {
+    [`is-${buttonState}`]: buttonState,
     [`is-${color}`]: color,
     [`is-${fullwidth}`]: fullwidth,
     [`is-${inverted}`]: inverted,
+    [`is-${isStatic}`]: isStatic,
     [`is-${light}`]: light,
     [`is-${loading}`]: loading,
     [`is-${outlined}`]: outlined,
     [`is-${rounded}`]: rounded,
     [`is-${size}`]: size,
-    [`is-${state}`]: state,
-    [`is-${static}`]: static
   });
 
   return (
@@ -44,17 +44,17 @@ const Button = ({
 };
 
 Button.propTypes = {
+  buttonState: PropTypes.oneOf(['active', 'focused', 'hovered']),
   color: PropTypes.oneOf(buttonColorModifiers),
   disabled: PropTypes.bool,
   fullwidth: PropTypes.bool,
   inverted: PropTypes.bool,
+  isStatic: PropTypes.bool,
   light: PropTypes.bool,
   loading: PropTypes.bool,
   outlined: PropTypes.bool,
   rounded: PropTypes.bool,
   size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
-  state: PropTypes.oneOf(['active', 'focused', 'hovered']),
-  static: PropTypes.bool,
   text: PropTypes.string,
   type: PropTypes.oneOf(['button', 'reset', 'submit'])
 };
