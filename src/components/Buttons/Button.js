@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { buttonColorModifiers } from '../../utils/modifiers';
+import { buttonModifiers } from '../../utils/modifiers';
 import classNames from '../../utils/classNames';
 
 const Button = ({
   buttonState,
   color,
-  disabled,
-  fullwidth,
-  inverted,
+  isDisabled,
+  isFullwidth,
+  isInverted,
+  isLight,
+  isLoading,
+  isOutlined,
+  isRounded,
   isStatic,
-  light,
-  loading,
-  outlined,
-  rounded,
   size,
   text,
   type = 'button'
@@ -22,20 +22,20 @@ const Button = ({
   const classes = classNames('button', {
     [`is-${buttonState}`]: buttonState,
     [`is-${color}`]: color,
-    [`is-${fullwidth}`]: fullwidth,
-    [`is-${inverted}`]: inverted,
-    [`is-${isStatic}`]: isStatic,
-    [`is-${light}`]: light,
-    [`is-${loading}`]: loading,
-    [`is-${outlined}`]: outlined,
-    [`is-${rounded}`]: rounded,
-    [`is-${size}`]: size,
+    'is-fullwidth': isFullwidth,
+    'is-inverted': isInverted,
+    'is-light': isLight,
+    'is-loading': isLoading,
+    'is-outlined': isOutlined,
+    'is-rounded': isRounded,
+    'is-static': isStatic,
+    [`is-${size}`]: size
   });
 
   return (
     <button
       className={classes}
-      disabled={disabled}
+      disabled={isDisabled}
       type={type}
     >
       {text}
@@ -44,19 +44,19 @@ const Button = ({
 };
 
 Button.propTypes = {
-  buttonState: PropTypes.oneOf(['active', 'focused', 'hovered']),
-  color: PropTypes.oneOf(buttonColorModifiers),
-  disabled: PropTypes.bool,
-  fullwidth: PropTypes.bool,
-  inverted: PropTypes.bool,
+  buttonState: PropTypes.oneOf(buttonModifiers.buttonStates),
+  color: PropTypes.oneOf(buttonModifiers.colors),
+  isDisabled: PropTypes.bool,
+  isFullwidth: PropTypes.bool,
+  isInverted: PropTypes.bool,
+  isLight: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  isOutlined: PropTypes.bool,
+  isRounded: PropTypes.bool,
   isStatic: PropTypes.bool,
-  light: PropTypes.bool,
-  loading: PropTypes.bool,
-  outlined: PropTypes.bool,
-  rounded: PropTypes.bool,
-  size: PropTypes.oneOf(['small', 'normal', 'medium', 'large']),
+  size: PropTypes.oneOf(buttonModifiers.sizes),
   text: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'reset', 'submit'])
+  type: PropTypes.oneOf(buttonModifiers.types)
 };
 
 export default Button;
