@@ -6,6 +6,7 @@ import classNames from '../../utils/classNames';
 
 const Button = ({
   buttonState,
+  classes,
   color,
   isDisabled,
   isFullwidth,
@@ -19,7 +20,7 @@ const Button = ({
   text,
   type = 'button'
 }) => {
-  const classes = classNames('button', {
+  const classList = classNames('button', classes, {
     [`is-${buttonState}`]: buttonState,
     [`is-${color}`]: color,
     'is-fullwidth': isFullwidth,
@@ -34,7 +35,7 @@ const Button = ({
 
   return (
     <button
-      className={classes}
+      className={classList}
       disabled={isDisabled}
       type={type}
     >
@@ -45,6 +46,10 @@ const Button = ({
 
 Button.propTypes = {
   buttonState: PropTypes.oneOf(buttonModifiers.buttonStates),
+  classes: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array
+  ]),
   color: PropTypes.oneOf(buttonModifiers.colors),
   isDisabled: PropTypes.bool,
   isFullwidth: PropTypes.bool,
