@@ -11,7 +11,7 @@ export const defaultButton = () => (
   <Button
     contrast={boolean('Contrast', false)}
     outline={boolean('Outline', false)}
-    secondary={boolean('secondary', false)}
+    secondary={boolean('Secondary', false)}
   >
     Button Component
   </Button>

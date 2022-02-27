@@ -2523,6 +2523,11 @@
     "mkdirp" "^1.0.4"
     "rimraf" "^3.0.2"
 
+"@picocss/pico@^1.4.4":
+  "integrity" "sha512-MuL4MOY1Tugf91N06mhYETVqMiNeT9gObMJ0WNrnbSGBw61gsqXzn7ScjXvVpnQmFC8DP13mluzz1s+ogpiuEQ=="
+  "resolved" "https://registry.npmjs.org/@picocss/pico/-/pico-1.4.4.tgz"
+  "version" "1.4.4"
+
 "@pmmmwh/react-refresh-webpack-plugin@^0.4.3":
   "integrity" "sha512-br5Qwvh8D2OQqSXpd1g/xqXKnK0r+Jz6qVKBbWmpUcrbGOxUrf39V5oZ1876084CGn18uMdR5uvPqBv9UqtBjQ=="
   "resolved" "https://registry.npmjs.org/@pmmmwh/react-refresh-webpack-plugin/-/react-refresh-webpack-plugin-0.4.3.tgz"
