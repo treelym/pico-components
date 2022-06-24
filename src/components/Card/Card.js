@@ -8,9 +8,9 @@ const Card = ({
 }) => {
   return (
     <article>
-      {headerContent ? <header>{headerContent}</header> : null}
+      {headerContent && <header>{headerContent}</header>}
       {children}
-      {footerContent ? <footer>{footerContent}</footer> : null}
+      {footerContent && <footer>{footerContent}</footer>}
     </article>
   );
 };
