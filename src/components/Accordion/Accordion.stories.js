@@ -18,6 +18,9 @@ export const defaultAccordion = () => (
         <li>inside</li>
       </ul>
     </Accordion>
+    <Accordion summary="Accordion #3" isOpen={true}>
+      <p>I'm open by default</p>
+    </Accordion>
   </>
 );
 

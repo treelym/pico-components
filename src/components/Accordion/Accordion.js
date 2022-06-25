@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 const Accordion = ({
   children,
+  isOpen,
   summary
 }) => (
-  <details>
+  <details open={isOpen}>
     <summary>{summary}</summary>
     {children}
   </details>
@@ -13,6 +14,7 @@ const Accordion = ({
 
 Accordion.propTypes = {
   children: PropTypes.node.isRequired,
+  isOpen: PropTypes.bool,
   summary: PropTypes.string.isRequired
 };
 
