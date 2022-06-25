@@ -5,15 +5,13 @@ const Card = ({
   children,
   headerContent,
   footerContent
-}) => {
-  return (
-    <article>
-      {headerContent && <header>{headerContent}</header>}
-      {children}
-      {footerContent && <footer>{footerContent}</footer>}
-    </article>
-  );
-};
+}) => (
+  <article>
+    {headerContent && <header>{headerContent}</header>}
+    {children}
+    {footerContent && <footer>{footerContent}</footer>}
+  </article>
+);
 
 Card.propTypes = {
   children: PropTypes.node.isRequired,
