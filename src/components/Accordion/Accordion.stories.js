@@ -1,5 +1,6 @@
 import React from 'react';
 import Accordion from './Accordion';
+import { boolean } from '@storybook/addon-knobs';
 
 export default {
   title: 'Accordion'
@@ -7,7 +8,7 @@ export default {
 
 export const defaultAccordion = () => (
   <>
-    <Accordion summary="Accordion #1">
+    <Accordion summary="Accordion #1" isButton={boolean('Is Button?', false)}>
       <p>And here's more!</p>
     </Accordion>
     <Accordion summary="Accordion #2">
